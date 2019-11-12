@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MQTT</title>
+    <!-- add icon link -->
+    <link rel="icon" href="https://www.openautomationsoftware.com/wp-content/uploads/2016/05/MQTT-icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        button {
+            width: 120px;
+        }
+
+        .card-deck {
+            margin-top: 50px;
+        }
+
+        table {
+            padding-block-start: 10px;
+        }
+
+        .my-custom-scrollbar {
+            position: relative;
+            height: 400px;
+            overflow: auto;
+        }
+
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="scripts/browserMqtt.js"></script>
+    <script src="scripts/controller.js"></script>
+    <div class="container-fluid" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5o6mAaZf6CS9Y4gf6O0zhBSYri6SjjadZnxSG-5D3AzEICJSa5Q&s);background-size: 40%">
+        <strong style="margin-left: 5%;font-family: Impact;font-size: 80px;color: darksalmon">MQTT</strong>
+        <h1 style="margin-left: 5%">My MQTT Web App</h1>
+    </div>
+    <hr>
+    <hr>
+    <div class="container-fluid">
+        <div class="card-deck">
+            <div class="card" style="background-color: #99b3e6;border-radius: 3%">
+                <div class="card-body text-center">
+                    <h2>IOT SWITCH</h2>
+                    <h4 id="status">The device is currently turned off</h4>
+                    <button id="on" class="btn btn-outline-primary">ON</button>
+                    <button id="off" class="btn btn-outline-danger">OFF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <br><br>
+</body>
+<script src="browserMqtt.js"></script>
+<script src="controller.js"></script>
+<!-- <script>
+    var connect = "wss://test.mosquitto.org:8081/mqtt";
+    client = mqtt.connect(connect);
+
+    $(document).ready(function () {
+        $("#on").click(function (e) {
+            e.preventDefault();
+            var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+            var topic = 'yubert/device/status';
+            var payload = 'Turned On: ' + time
+            client.publish(topic, payload);
+            $("#status").html("The device is currently turned ON");
+        })
+        $("#off").click(function (e) {
+            e.preventDefault();
+            var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+            var topic = 'yubert/device/status';
+            var payload = 'Turned Off: ' + time
+            client.publish(topic, payload);
+            $("#status").html("The device is currently turned OFF");
+        })
+    })
+</script> -->
+
+
+</html>
